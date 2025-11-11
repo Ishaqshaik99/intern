@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stunning Landing Page - Home</title>
+    
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Styles to make it "stunning" */
+        @keyframes float-up {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            scroll-padding-top: 80px; /* Offset for sticky navbar */
+        }
+
+        /* Custom Navbar Styling */
+        .navbar {
+            /* Subtle shadow for depth */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            background-color: #ffffff;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .navbar-brand, .nav-link {
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #0d6efd !important;
+        }
+        
+        .navbar-brand:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: #343a40 !important;
+            position: relative;
+            padding-bottom: 0.5rem; /* Make space for underline */
+        }
+
+        .nav-link:hover {
+            color: #0d6efd !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: #0d6efd;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 70%; /* Animate underline */
+        }
+        
+        .nav-link.active {
+            color: #0d6efd !important;
+            font-weight: 700; /* Make active bolder */
+        }
+
+        /* Hero Section Styling */
+        .hero-section {
+            /* Gradient background */
+            background: linear-gradient(135deg, #0d6efd, #0dcaf0);
+            color: white;
+            padding: 8rem 0;
+            border-bottom-left-radius: 2rem;
+            border-bottom-right-radius: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .hero-section h1 {
+            font-weight: 700;
+            font-size: 3.5rem;
+        }
+
+        .hero-section p {
+            font-size: 1.25rem;
+            font-weight: 400;
+            max-width: 600px;
+            margin: 1rem auto 2rem;
+        }
+
+        .hero-section .btn {
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50rem; /* Pill shape */
+            transition: all 0.3s ease;
+        }
+
+        .hero-section .btn-primary {
+            background-color: #ffffff;
+            color: #0d6efd;
+            border: 2px solid #ffffff;
+        }
+
+        .hero-section .btn-primary:hover {
+            background-color: transparent;
+            color: #ffffff;
+        }
+
+        .hero-section .btn-outline-light {
+            border-width: 2px;
+        }
+
+        .hero-section .btn-outline-light:hover {
+            background-color: #ffffff;
+            color: #0d6efd;
+        }
+
+        .hero-image {
+            border-radius: 1.5rem;
+            box-shadow: 0 1rem 3rem rgba(0,0,0,0.15);
+            max-width: 100%;
+            animation: float-up 6s ease-in-out infinite;
+        }
+
+        /* Feature Section Styling */
+        .feature-icon-bg {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 1rem; /* Softer rounded corners */
+            background: linear-gradient(135deg, rgba(13, 110, 253, 0.1), rgba(13, 202, 240, 0.1));
+            color: #0d6efd;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card {
+            border: none;
+            border-radius: 1rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        /* New "Our Work" Section */
+        .work-card {
+            border: none;
+            border-radius: 1rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden; /* for the image */
+        }
+        .work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+        }
+        .work-card img {
+            border-bottom: 1px solid #eee;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+
+        /* Call to Action Section */
+        .cta-section {
+            background: linear-gradient(135deg, #0d6efd, #0dcaf0);
+            color: white;
+            padding: 5rem 0;
+            border-radius: 1.5rem;
+        }
+        .cta-section h2 {
+            font-weight: 700;
+        }
+        .cta-section .btn-light {
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50rem;
+            color: #0d6efd;
+            border: 2px solid #ffffff;
+            transition: all 0.3s ease;
+        }
+        .cta-section .btn-light:hover {
+            background-color: transparent;
+            color: #ffffff;
+        }
+
+
+        /* Footer Styling */
+        .footer {
+            background-color: #343a40;
+            color: #adb5bd;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer .bi:hover {
+            color: #ffffff;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- === Navbar === -->
+        <!-- Remix of Bootstrap "Navbar" component -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-gem"></i>
+                Stunning
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary rounded-pill px-4" href="contact.html">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- === Hero Section === -->
+    <!-- Remix of Bootstrap "Heroes" example -->
+    <header class="hero-section">
+        <div class="container">
+            <div class="row align-items-center g-5 py-5">
+                <div class="col-lg-6">
+                    <h1 class="display-4">Design Stunning Websites. Effortlessly.</h1>
+                    <p class="lead">
+                        Leverage the power of Bootstrap 5 to build beautiful, responsive, and modern web applications faster than ever before.
+                    </p>
+                    <div class="d-grid gap-2 d-sm-flex">
+                        <a href="about.html" role="button" class="btn btn-primary btn-lg px-4 gap-3">Learn More</a>
+                        <a href="contact.html" role="button" class="btn btn-outline-light btn-lg px-4">Contact Us</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center text-lg-end">
+                    <img src="https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                         alt="Modern web design on a computer screen" 
+                         class="img-fluid hero-image" 
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x450/0dcaf0/ffffff?text=Stunning+Design';">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- === Main Content Area === -->
+    <main class="container">
+
+        <!-- === Feature Section === -->
+        <!-- Remix of Bootstrap "Features" example with custom icons and cards -->
+        <section class="py-5" id="features">
+            <div class="container px-4 py-5">
+                <h2 class="pb-2 border-bottom text-center display-6 fw-bold">Why Choose Us?</h2>
+                <p class="text-center text-muted mb-5">We deliver best-in-class solutions for your business.</p>
+                
+                <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+                    
+                    <!-- Feature 1 -->
+                    <div class="col">
+                        <div class="card h-100 p-4 feature-card">
+                            <div class="feature-icon-bg">
+                                <i class="bi bi-bootstrap-fill"></i>
+                            </div>
+                            <h4 class="fw-semibold mb-3">Modern Bootstrap 5</h4>
+                            <p class="text-muted">We build everything using the latest Bootstrap 5 framework, ensuring mobile-first, responsive designs out of the box.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Feature 2 -->
+                    <div class="col">
+                        <div class="card h-100 p-4 feature-card">
+                            <div class="feature-icon-bg">
+                                <i class="bi bi-palette-fill"></i>
+                            </div>
+                            <h4 class="fw-semibold mb-3">Stunning UI/UX</h4>
+                            <p class="text-muted">Our focus is on clean, modern, and visually appealing design. We remix and customize components for a unique feel.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="col">
+                        <div class="card h-100 p-4 feature-card">
+                            <div class="feature-icon-bg">
+                                <i class="bi bi-speedometer2"></i>
+                            </div>
+                            <h4 class="fw-semibold mb-3">Lightning Fast</h4>
+                            <p class="text-muted">Optimized code and clean HTML5/CSS3 mean your website loads quickly and performs beautifully on all devices.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- === Our Work Section === -->
+        <section class="py-5" id="work">
+            <div class="container px-4 py-5">
+                <h2 class="pb-2 border-bottom text-center display-6 fw-bold">Our Work</h2>
+                <p class="text-center text-muted mb-5">A look at some of our stunning projects.</p>
+
+                <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+                    <!-- Work 1 -->
+                    <div class="col">
+                        <div class="card h-100 work-card">
+                            <img src="https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                                 class="card-img-top" 
+                                 alt="E-commerce website design"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/400x300/0d6efd/ffffff?text=Project+1';">
+                            <div class="card-body p-4">
+                                <h5 class="fw-semibold mb-2">E-commerce Platform</h5>
+                                <p class="text-muted small">A complete redesign and backend integration for a major online retailer.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Work 2 -->
+                    <div class="col">
+                         <div class="card h-100 work-card">
+                            <img src="https://images.pexels.com/photos/5082579/pexels-photo-5082579.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                                 class="card-img-top" 
+                                 alt="Mobile app design"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/400x300/0dcaf0/ffffff?text=Project+2';">
+                            <div class="card-body p-4">
+                                <h5 class="fw-semibold mb-2">SaaS Mobile App</h5>
+                                <p class="text-muted small">A cross-platform mobile application for a project management SaaS.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Work 3 -->
+                    <div class="col">
+                         <div class="card h-100 work-card">
+                            <img src="https://images.pexels.com/photos/39284/macbook-apple-imac-computer-39284.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                                 class="card-img-top" 
+                                 alt="Corporate website redesign"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/400x300/0d6efd/ffffff?text=Project+3';">
+                            <div class="card-body p-4">
+                                <h5 class="fw-semibold mb-2">Corporate Landing Page</h5>
+                                <p class="text-muted small">A modern, fast, and responsive landing page for a B2B tech company.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === Call to Action Section === -->
+        <section class="my-5">
+            <div class="container">
+                <div class="cta-section text-center p-5">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <h2 class="display-5 mb-3">Ready to Start Your Project?</h2>
+                            <p class="lead mb-4">
+                                Let's build something stunning together. Contact us today for a free consultation.
+                            </p>
+                            <a href="contact.html" class="btn btn-light btn-lg">
+                                Get in Touch <i class="bi bi-arrow-right-short"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- === Footer === -->
+    <!-- Remix of Bootstrap "Footers" example -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- Brand/About Column -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="navbar-brand text-white">
+                        <i class="bi bi-gem"></i>
+                        Stunning
+                    </h5>
+                    <p class="mt-3">
+                        Building modern, responsive websites with creativity and Bootstrap 5.
+                    </p>
+                    <div class="mt-4">
+                        <a href="https://x.com/Ishaq_shaik_99" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://x.com/Ishaq_shaik_99" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/ishaq-ahmed-shaik-892b81261" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://github.com/Ishaqshaik99" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Links Column 1 -->
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h5>Quick Links</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0">Home</a></li>
+                        <li class="nav-item mb-2"><a href="about.html" class="nav-link p-0">About</a></li>
+                        <li class="nav-item mb-2"><a href="contact.html" class="nav-link p-0">Contact</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Services</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links Column 2 -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5>Resources</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="https://getbootstrap.com/" target="_blank" class="nav-link p-0">Bootstrap Docs</a></li>
+                        <li class="nav-item mb-2"><a href="https://getbootstrap.com/docs/5.3/examples/" target="_blank" class="nav-link p-0">Bootstrap Examples</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Privacy Policy</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Column -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5>Contact Us</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2 d-flex align-items-center text-white">
+                            <i class="bi bi-geo-alt-fill me-2 flex-shrink-0"></i>
+                            <span class="small">Kurnool-518002</span>
+                        </li>
+                        <li class="nav-item mb-2 d-flex align-items-center text-white">
+                            <i class="bi bi-telephone-fill me-2 flex-shrink-0"></i>
+                            <span class="small">+91 9666074955</span>
+                        </li>
+                         <li class="nav-item mb-2 d-flex align-items-center text-white">
+                            <i class="bi bi-envelope-fill me-2 flex-shrink-0"></i>
+                            <span class="small">ishaqs200312@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="row">
+                <div class="col-12 text-center border-top border-secondary-subtle pt-4 mt-4">
+                    <p class="mb-0">&copy; 2025 Stunning. All rights reserved. Built with <i class="bi bi-heart-fill text-danger"></i> and Bootstrap 5.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

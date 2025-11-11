@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stunning Landing Page - Contact</title>
+    
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Styles (Shared with index.html) */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            scroll-padding-top: 80px; /* Offset for sticky navbar */
+        }
+
+        .navbar {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            background-color: #ffffff;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .navbar-brand, .nav-link {
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #0d6efd !important;
+        }
+        
+        .navbar-brand:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: #343a40 !important;
+            position: relative;
+            padding-bottom: 0.5rem; /* Make space for underline */
+        }
+
+        .nav-link:hover {
+            color: #0d6efd !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: #0d6efd;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 70%; /* Animate underline */
+        }
+
+        .nav-link.active {
+            color: #0d6efd !important;
+            font-weight: 700; /* Make active bolder */
+        }
+
+        /* Page-Specific Styles */
+        .page-header {
+            background: linear-gradient(135deg, rgba(13, 110, 253, 0.1), rgba(13, 202, 240, 0.1));
+            padding: 4rem 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .page-header h1 {
+            color: #0d6efd;
+            font-weight: 700;
+        }
+
+        .contact-form-card {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            padding: 2.5rem;
+            border: none;
+        }
+
+        .contact-info-card {
+            background: linear-gradient(135deg, #0d6efd, #0dcaf0);
+            color: white;
+            border-radius: 1rem;
+            padding: 2.5rem;
+            border: none;
+        }
+        
+        .contact-info-card h4 {
+            font-weight: 600;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 1rem;
+        }
+
+        .contact-info-card .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-info-card .info-item i {
+            font-size: 1.5rem;
+            margin-right: 1.5rem;
+            margin-top: 0.25rem;
+            width: 30px; /* Fixed width for alignment */
+            text-align: center;
+        }
+        
+        .contact-info-card .info-item p {
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+        
+        .contact-info-card .info-item p.small {
+            font-weight: 400;
+            opacity: 0.9;
+        }
+        
+        .form-floating label {
+            color: #6c757d;
+        }
+        
+        .form-control:focus {
+             border-color: #0d6efd;
+             box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+        }
+
+        .map-container {
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            border: 1px solid #dee2e6;
+        }
+
+        .map-container iframe {
+            display: block;
+            border: none;
+            width: 100%;
+            height: 400px;
+        }
+
+        /* Footer Styling (Shared) */
+        .footer {
+            background-color: #343a40;
+            color: #adb5bd;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer .bi:hover {
+            color: #ffffff;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- === Navbar === -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-gem"></i>
+                Stunning
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary rounded-pill px-4" href="contact.html">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- === Page Header === -->
+    <header class="page-header text-center">
+        <div class="container">
+            <h1 class="display-4">Get in Touch</h1>
+            <p class="lead text-muted">We'd love to hear from you. Send us a message!</p>
+        </div>
+    </header>
+
+    <!-- === Main Content Area === -->
+    <main class="container my-5 py-5">
+
+        <!-- === Contact Form Section === -->
+        <!-- Remix of Bootstrap "Forms" and "Grid" -->
+        <section>
+            <div class="row g-5">
+                <!-- Contact Form Column -->
+                <div class="col-lg-7">
+                    <div class="card contact-form-card">
+                        <h4 class="fw-bold mb-4">Send us a Message</h4>
+                        <!-- This form uses Bootstrap 5 validation. 
+                             It does not actually submit data without a backend. -->
+                        <form class="needs-validation" novalidate>
+                            <div class="row g-3">
+                                <!-- First Name -->
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
+                                        <label for="firstName">First Name</label>
+                                        <div class="invalid-feedback">
+                                            Valid first name is required.
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Last Name -->
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
+                                        <label for="lastName">Last Name</label>
+                                        <div class="invalid-feedback">
+                                            Valid last name is required.
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Email -->
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+                                        <label for="email">Email Address</label>
+                                        <div class="invalid-feedback">
+                                            Please enter a valid email address.
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Subject -->
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+                                        <label for="subject">Subject</label>
+                                         <div class="invalid-feedback">
+                                            Please enter a subject.
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Message -->
+                                <div class="col-12">
+                                     <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px" required></textarea>
+                                        <label for="message">Message</label>
+                                        <div class="invalid-feedback">
+                                            Please enter your message.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Submit Button -->
+                            <button class="btn btn-primary btn-lg rounded-pill w-100 mt-4" type="submit">
+                                Send Message
+                                <i class="bi bi-arrow-right-short ms-1"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Info Column -->
+                <div class="col-lg-5">
+                    <div class="card contact-info-card h-100">
+                        <h4 class="mb-4">Contact Information</h4>
+
+                        <div class="info-item">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <div>
+                                <p>Address</p>
+                                <p class="small">Kurnool-518002</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="bi bi-telephone-fill"></i>
+                            <div>
+                                <p>Phone</p>
+                                <p class="small">+91 9666074955</p>
+                            </div>
+                        </div>
+
+                         <div class="info-item">
+                            <i class="bi bi-envelope-fill"></i>
+                            <div>
+                                <p>Email</p>
+                                <p class="small">ishaqs200312@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                         <div class="info-item">
+                            <i class="bi bi-clock-fill"></i>
+                            <div>
+                                <p>Business Hours</p>
+                                <p class="small">Monday - Friday: 9am - 5pm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === Map Section === -->
+        <section class="my-5">
+            <div class="container">
+                <h2 class="pb-2 border-bottom text-center display-6 fw-bold">Find Us</h2>
+                <p class="text-center text-muted mb-5">We are located in the heart of Kurnool.</p>
+                <div class="map-container">
+                    <!-- Placeholder iframe. Replace with a real Google Maps embed code. -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61394.3970222166!2d78.0020473211568!3d15.823908914041763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5ddf53d710661%3A0x436b1361b8f5d44!2sKurnool%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1731296238384!5m2!1sen!2sin" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- === Footer === -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- Brand/About Column -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="navbar-brand text-white">
+                        <i class="bi bi-gem"></i>
+                        Stunning
+                    </h5>
+                    <p class="mt-3">
+                        Building modern, responsive websites with creativity and Bootstrap 5.
+                    </p>
+                    <div class="mt-4">
+                        <a href="https://x.com/Ishaq_shaik_99" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://x.com/Ishaq_shaik_99" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/ishaq-ahmed-shaik-892b81261" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://github.com/Ishaqshaik99" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Links Column 1 -->
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h5>Quick Links</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0">Home</a></li>
+                        <li class="nav-item mb-2"><a href="about.html" class="nav-link p-0">About</a></li>
+                        <li class="nav-item mb-2"><a href="contact.html" class="nav-link p-0">Contact</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Services</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links Column 2 -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5>Resources</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="https://getbootstrap.com/" target="_blank" class="nav-link p-0">Bootstrap Docs</a></li>
+                        <li class="nav-item mb-2"><a href="https://getbootstrap.com/docs/5.3/examples/" target="_blank" class="nav-link p-0">Bootstrap Examples</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Privacy Policy</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Column -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5>Contact Us</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2 d-flex align-items-center text-white">
+                            <i class="bi bi-geo-alt-fill me-2 flex-shrink-0"></i>
+                            <span class="small">Kurnool-518002</span>
+                        </li>
+                        <li class="nav-item mb-2 d-flex align-items-center text-white">
+                            <i class="bi bi-telephone-fill me-2 flex-shrink-0"></i>
+                            <span class="small">+91 9666074955</span>
+                        </li>
+                         <li class="nav-item mb-2 d-flex align-items-center text-white">
+                            <i class="bi bi-envelope-fill me-2 flex-shrink-0"></i>
+                            <span class="small">ishaqs200312@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="row">
+                <div class="col-12 text-center border-top border-secondary-subtle pt-4 mt-4">
+                    <p class="mb-0">&copy; 2025 Stunning. All rights reserved. Built with <i class="bi bi-heart-fill text-danger"></i> and Bootstrap 5.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Simple script for Bootstrap 5 Form Validation -->
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (() => {
+        'use-strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+            }, false)
+        })
+        })()
+    </script>
+</body>
+</html>

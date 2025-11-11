@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stunning Landing Page - About</title>
+    
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Styles (Shared with index.html) */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            scroll-padding-top: 80px; /* Offset for sticky navbar */
+        }
+
+        .navbar {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            background-color: #ffffff;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .navbar-brand, .nav-link {
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #0d6efd !important;
+        }
+        
+        .navbar-brand:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: #343a40 !important;
+            position: relative;
+            padding-bottom: 0.5rem; /* Make space for underline */
+        }
+
+        .nav-link:hover {
+            color: #0d6efd !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: #0d6efd;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 70%; /* Animate underline */
+        }
+
+        .nav-link.active {
+            color: #0d6efd !important;
+            font-weight: 700; /* Make active bolder */
+        }
+
+        /* Page-Specific Styles */
+        .page-header {
+            background: linear-gradient(135deg, rgba(13, 110, 253, 0.1), rgba(13, 202, 240, 0.1));
+            padding: 4rem 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .page-header h1 {
+            color: #0d6efd;
+            font-weight: 700;
+        }
+
+        .service-card {
+            border: none;
+            border-radius: 1rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #ffffff;
+            overflow: hidden; /* To contain the image */
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: #0d6efd;
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover; /* Ensures images are cropped nicely */
+            border-radius: 50%;
+            border: 5px solid #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-member:hover img {
+             transform: scale(1.05);
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover; /* Ensures images are cropped nicely */
+            border-radius: 50%;
+            border: 5px solid #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease; /* Added transition */
+        }
+
+        /* Footer Styling (Shared) */
+        .footer {
+            background-color: #343a40;
+            color: #adb5bd;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer .bi:hover {
+            color: #ffffff;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- === Navbar === -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-gem"></i>
+                Stunning
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary rounded-pill px-4" href="contact.html">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- === Page Header === -->
+    <header class="page-header text-center">
+        <div class="container">
+            <h1 class="display-4">About Us</h1>
+            <p class="lead text-muted">Learn more about our mission, our values, and our team.</p>
+        </div>
+    </header>
+
+    <!-- === Main Content Area === -->
+    <main class="container">
+
+        <!-- === About Section === -->
+        <!-- Remix of Bootstrap "Jumbotron" (adapted) and "Grid" -->
+        <section class="py-5 my-5">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <img src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                             class="img-fluid rounded-3 shadow-lg" 
+                             alt="Our team collaborating in a modern office"
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/0d6efd/ffffff?text=Our+Mission';">
+                    </div>
+                    <div class="col-lg-6">
+                        <h2 class="fw-bold mb-3">Our Mission</h2>
+                        <p class="lead text-muted">
+                            Our mission is to empower businesses by creating elegant, functional, and user-centric digital experiences. We believe in the power of good design and cutting-edge technology to solve real-world problems.
+                        </p>
+                        <p class="text-muted">
+                            We use Bootstrap 5 not just as a framework, but as a foundation for creativity. By remixing and extending its components, we build unique websites that stand out, load fast, and work flawlessly on any device.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === Services Section === -->
+        <!-- Remix of Bootstrap "Cards" and "Features" -->
+        <section class="py-5" id="services" style="background-color: #ffffff; border-radius: 1rem;">
+            <div class="container px-4 py-5">
+                <h2 class="pb-2 border-bottom text-center display-6 fw-bold">Our Services</h2>
+                <p class="text-center text-muted mb-5">What we do best.</p>
+                
+                <div class="row g-4 py-5 row-cols-1 row-cols-md-3">
+                    
+                    <!-- Service 1 -->
+                    <div class="col">
+                        <div class="card h-100 text-center service-card">
+                            <img src="https://images.pexels.com/photos/3184454/pexels-photo-3184454.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                                 class="card-img-top" 
+                                 alt="Web Design" 
+                                 style="aspect-ratio: 16/9; object-fit: cover;"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/400x225/0d6efd/ffffff?text=Web+Design';">
+                            <div class="card-body p-4">
+                                <div class="mb-3">
+                                    <i class="bi bi-layout-wtf service-icon"></i>
+                                </div>
+                                <h4 class="fw-semibold mb-3">Web Design</h4>
+                                <p class="text-muted">Creating stunning, responsive layouts tailored to your brand's identity.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 2 -->
+                    <div class="col">
+                        <div class="card h-100 text-center service-card">
+                             <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                                 class="card-img-top" 
+                                 alt="Front-End Development" 
+                                 style="aspect-ratio: 16/9; object-fit: cover;"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/400x225/0dcaf0/ffffff?text=Development';">
+                            <div class="card-body p-4">
+                                 <div class="mb-3">
+                                    <i class="bi bi-code-slash service-icon"></i>
+                                </div>
+                                <h4 class="fw-semibold mb-3">Front-End Development</h4>
+                                <p class="text-muted">Bringing designs to life with clean, efficient HTML5, CSS3, and Bootstrap.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="col">
+                        <div class="card h-100 text-center service-card">
+                             <img src="https://images.pexels.com/photos/4126743/pexels-photo-4126743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                                 class="card-img-top" 
+                                 alt="Mobile-First Design" 
+                                 style="aspect-ratio: 16/9; object-fit: cover;"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/400x225/0d6efd/ffffff?text=Mobile+First';">
+                            <div class="card-body p-4">
+                                 <div class="mb-3">
+                                    <i class="bi bi-phone-fill service-icon"></i>
+                                </div>
+                                <h4 class="fw-semibold mb-3">Mobile-First</h4>
+                                <p class="text-muted">Ensuring your site looks and works perfectly on all devices, from phones to desktops.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- === Team Section === -->
+        <!-- Remix of "Cards" with custom styling -->
+        <section class="py-5 my-5">
+            <div class="container text-center">
+                <h2 class="pb-2 border-bottom text-center display-6 fw-bold">Meet the Team</h2>
+                <p class="text-center text-muted mb-5">The faces behind the code.</p>
+
+                <div class="row g-4">
+                    <!-- Team Member 1 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card border-0 p-4 team-member">
+                            <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=160&h=160&dpr=1" 
+                                 class="img-fluid mx-auto mb-3" 
+                                 alt="Jane Doe, Lead Designer"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/150x150/0dcaf0/ffffff?text=Jane';">
+                            <h5 class="fw-bold mb-1">Jane Doe</h5>
+                            <p class="text-primary mb-2">Lead Designer</p>
+                            <p class="text-muted small">Passionate about pixels and creating intuitive user experiences.</p>
+                        </div>
+                    </div>
+                    <!-- Team Member 2 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card border-0 p-4 team-member">
+                            <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=160&h=160&dpr=1" 
+                                 class="img-fluid mx-auto mb-3" 
+                                 alt="John Smith, Lead Developer"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/150x150/0d6efd/ffffff?text=John';">
+                            <h5 class="fw-bold mb-1">John Smith</h5>
+                            <p class="text-primary mb-2">Lead Developer</p>
+                            <p class="text-muted small">Loves clean code, Bootstrap, and bringing ideas to life.</p>
+                        </div>
+                    </div>
+                    <!-- Team Member 3 -->
+                    <div class="col-lg-4 col-md-12">
+                         <div class="card border-0 p-4 team-member">
+                            <img src="https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&cs=tinysrgb&w=160&h=160&dpr=1" 
+                                 class="img-fluid mx-auto mb-3" 
+                                 alt="Alex Johnson, Project Manager"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/150x150/6c757d/ffffff?text=Alex';">
+                            <h5 class="fw-bold mb-1">Alex Johnson</h5>
+                            <p class="text-primary mb-2">Project Manager</p>
+                            <p class="text-muted small">Keeps everyone on track and ensures projects are delivered on time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- === Footer === -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- Brand/About Column -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="navbar-brand text-white">
+                        <i class="bi bi-gem"></i>
+                        Stunning
+                    </h5>
+                    <p class="mt-3">
+                        Building modern, responsive websites with creativity and Bootstrap 5.
+                    </p>
+                    <div class="mt-4">
+                        <a href="https://x.com/Ishaq_shaik_99" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://x.com/Ishaq_shaik_99" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/ishaq-ahmed-shaik-892b81261" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://github.com/Ishaqshaik99" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Links Column 1 -->
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h5>Quick Links</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0">Home</a></li>
+                        <li class="nav-item mb-2"><a href="about.html" class="nav-link p-0">About</a></li>
+                        <li class="nav-item mb-2"><a href="contact.html" class="nav-link p-0">Contact</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Services</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links Column 2 -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5>Resources</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="https://getbootstrap.com/" target="_blank" class="nav-link p-0">Bootstrap Docs</a></li>
+                        <li class="nav-item mb-2"><a href="https://getbootstrap.com/docs/5.3/examples/" target="_blank" class="nav-link p-0">Bootstrap Examples</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Privacy Policy</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Column -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5>Contact Us</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2 d-flex align-items-center text-white">
+                            <i class="bi bi-geo-alt-fill me-2 flex-shrink-0"></i>
+                            <span class="small">Kurnool-518002</span>
+                        </li>
+                        <li class="nav-item mb-2 d-flex align-items-center text-white">
+                            <i class="bi bi-telephone-fill me-2 flex-shrink-0"></i>
+                            <span class="small">+91 9666074955</span>
+                        </li>
+                         <li class="nav-item mb-2 d-flex align-items-center text-white">
+                            <i class="bi bi-envelope-fill me-2 flex-shrink-0"></i>
+                            <span class="small">ishaqs200312@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="row">
+                <div class="col-12 text-center border-top border-secondary-subtle pt-4 mt-4">
+                    <p class="mb-0">&copy; 2025 Stunning. All rights reserved. Built with <i class="bi bi-heart-fill text-danger"></i> and Bootstrap 5.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
